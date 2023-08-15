@@ -9,7 +9,7 @@ public class Question_02_12 {
         double speed = input.nextDouble();
         double acceleration = input.nextDouble();
         double lenght = Math.pow(speed, 2) / (2 * acceleration);
-        System.out.println("The minimum runway lenght for this airplane is " + lenght);
+        System.out.println("The minimum runway lenght for this airplane is " + (float)lenght);
 
     }
 }

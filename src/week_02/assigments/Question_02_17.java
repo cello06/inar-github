@@ -20,7 +20,7 @@ public class Question_02_17 {
         double windChill = 35.74 + (0.6215 * temperature) -
                 (35.75 * Math.pow(windSpeed, 0.16)) +
                 (0.4275 * temperature * Math.pow(windSpeed, 0.16));
-        System.out.println("The wind chill index is " + windChill);
+        System.out.println("The wind chill index is " + (float)windChill);
 
     }
 }

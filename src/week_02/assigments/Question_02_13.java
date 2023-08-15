@@ -14,7 +14,7 @@ public class Question_02_13 {
         double fourthMonth = (savingAmount + thirdMonth) * (1 + MONTHLY_INTEREST_RATE);
         double fifthMonth = (savingAmount + fourthMonth) * (1 + MONTHLY_INTEREST_RATE);
         double sixthMonth = (savingAmount + fifthMonth) * (1 + MONTHLY_INTEREST_RATE);
-        System.out.println("After the sixth month, the account value is $" + sixthMonth);
+        System.out.println("After the sixth month, the account value is $" + (int)(sixthMonth*100)/100.0);
 
 
     }

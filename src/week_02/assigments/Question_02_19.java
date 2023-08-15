@@ -23,7 +23,7 @@ public class Question_02_19 {
         double side = (firstSide + secondSide + thirdSide) / 2;
         double area = Math.pow(side * (side - firstSide) *
                 (side - secondSide) * (side - thirdSide), 0.5);
-        System.out.println("The area of the triangle is " + area);
+        System.out.println("The area of the triangle is " + (int)(area*10)/10.0);
 
     }
 }

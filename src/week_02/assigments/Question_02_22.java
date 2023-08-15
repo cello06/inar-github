@@ -12,12 +12,18 @@ public class Question_02_22 {
                Dimes (10 cents each): 10 dimes
                Nickels (5 cents each): 20 nickels
                Pennies (1 cent each): 100 pennies*/
+
         int amount = input.nextInt();
         int dollar = amount / 100;
-        int quarter = (amount % 100) / 25;
-        int dimes = ((amount % 100) % 25) / 10;
-        int nickle = (((amount % 100) % 25) % 10) / 5;
-        int penny = (((amount % 100) % 25) % 10) % 5;
+        int remainingAmaount = amount % 100;
+
+        int quarter = remainingAmaount / 25;
+        remainingAmaount = remainingAmaount % 25;
+        int dimes = remainingAmaount / 10;
+        remainingAmaount = remainingAmaount % 10;
+        int nickle = remainingAmaount / 5;
+        remainingAmaount = remainingAmaount % 5;
+        int penny = remainingAmaount;
         System.out.println("Your amount " + amount + " consist of\n" +
                 dollar + " dollars\n" + quarter + " quarters\n" +
                 dimes + " dimes\n" + nickle + " nickles\n" + penny + " pennies");

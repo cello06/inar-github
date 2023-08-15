@@ -15,7 +15,7 @@ public class Question_02_14 {
         double weightInKilogram = weight * 0.45359237;
         double heightInMeter = height * 0.0254;
         double bodyMassIndex = weightInKilogram / (Math.pow(heightInMeter, 2));
-        System.out.println("BMI is " + bodyMassIndex);
+        System.out.println("BMI is " + (int)(bodyMassIndex*10000)/10000.0);
 
 
     }

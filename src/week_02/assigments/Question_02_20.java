@@ -10,6 +10,6 @@ public class Question_02_20 {
         double annualInterestRate = input.nextDouble();
         double interest = balance * (annualInterestRate / 1200);
 
-        System.out.println("The interest is " + interest);
+        System.out.println("The interest is " + (int)(interest*100*1000)/100000.0);
     }
 }

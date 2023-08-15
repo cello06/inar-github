@@ -12,7 +12,7 @@ public class Question_02_02 {
         double area=Math.pow(radius,2)*PI;
         double volume=area*lenght;
 
-        System.out.println("The area is "+area);
-        System.out.println("The volume is "+volume);
+        System.out.println("The area is "+(int)(area*10000)/10000.0);
+        System.out.println("The volume is "+(int)(volume*10)/10.0);
     }
 }
