@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class ComputeAngles {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter three points : ");
+        System.out.print("Enter the coordinates of three points separated"
+                +"by spaces like x1 y1 x2 y2 x3 y3: ");
 
 
         double xOfPointA = input.nextDouble();
