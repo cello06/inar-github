@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Question_03_30 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.print("Enter the time zone offset to GMT: ");
+        int gMT = input.nextInt();
         String timePeriod = " AM";
         long totalMilliSecond = System.currentTimeMillis();
         long totalSecond = totalMilliSecond / 1000;
@@ -13,14 +15,15 @@ public class Question_03_30 {
         long currentMinute = totalMinute % 60;
         long totalHour = totalMinute / 60;
         long currentHour = totalHour % 24;
-        if (currentHour > 12) {
-            currentHour = currentHour % 12;
+        int currentHourAccordingToGMT = (int) (currentHour) + gMT;
+        if (currentHourAccordingToGMT > 12) {
+            currentHourAccordingToGMT = currentHourAccordingToGMT % 12;
             timePeriod = " PM";
         }
-        if(currentHour==12){
-            currentHour=0;
+        if (currentHourAccordingToGMT == 12) {
+            currentHourAccordingToGMT = 0;
         }
-        System.out.println("The current time is " + currentHour + ":" + currentMinute + ":" + currentSecond + timePeriod);
+        System.out.println("The current time is " + currentHourAccordingToGMT + ":" + currentMinute + ":" + currentSecond + timePeriod);
 
 
     }
