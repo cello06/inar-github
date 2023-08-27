@@ -36,15 +36,17 @@ public class Question_04_11 {
             case 1:
                 stringOfHexValue = "B";
                 break;
-            case 3:
+            case 2:
                 stringOfHexValue = "C";
                 break;
-            case 4:
+            case 3:
                 stringOfHexValue = "D";
                 break;
-            case 5:
+            case 4:
                 stringOfHexValue = "E";
                 break;
+            case 5:
+                stringOfHexValue = "F";
             default:
                 break;
         }
