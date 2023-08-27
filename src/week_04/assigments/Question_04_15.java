@@ -79,6 +79,6 @@ public class Question_04_15 {
         }else {
             System.exit(1);
         }
-        
+
     }
 }
