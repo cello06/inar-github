@@ -10,6 +10,6 @@ public class Question_04_16 {
         int unicodeOfUpperCaseLetter = (int) (Math.random() * (90 - 65)) + 65;
 
         System.out.print((char) (unicodeOfUpperCaseLetter));
-        
+
     }
 }
