@@ -41,16 +41,16 @@ public class Question_04_18 {
         if (valid) {
             switch (status) {
                 case '1':
-                    stringOfStatus = "Freshman";
+                    stringOfStatus = " Freshman";
                     break;
                 case '2':
-                    stringOfStatus = "Sophomore";
+                    stringOfStatus = " Sophomore";
                     break;
                 case '3':
-                    stringOfStatus = "Junior";
+                    stringOfStatus = " Junior";
                     break;
                 case '4':
-                    stringOfStatus = "Senior";
+                    stringOfStatus = " Senior";
                     break;
                 default:
                     System.out.println("Invalid input");
@@ -60,7 +60,7 @@ public class Question_04_18 {
 
 
         if (valid) {
-            System.out.printf("%s %s", stringOfMajor, stringOfStatus);
+            System.out.println(stringOfMajor.concat(stringOfStatus));
         }
     }
 }
