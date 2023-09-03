@@ -48,6 +48,7 @@ public class PrimeNumber {
 
         }
 
-        System.out.println(listOfPrimeNumber);
+        System.out.println("The first 50 prime numbers are"+
+                listOfPrimeNumber);
     }
 }

@@ -1,4 +1,4 @@
-package my_week_05;
+package week_05.live_class;
 
 import java.util.Scanner;
 
