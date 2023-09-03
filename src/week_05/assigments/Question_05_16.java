@@ -35,7 +35,7 @@ public class Question_05_16 {
         int lastIndexOfComma = smallestFactorsOfNumber.lastIndexOf(',');
 
         smallestFactorsOfNumber = smallestFactorsOfNumber.substring(0, lastIndexOfComma) + ".";
-        
+
         System.out.println(smallestFactorsOfNumber);
     }
 }
