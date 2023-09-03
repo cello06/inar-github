@@ -20,7 +20,7 @@ public class Question_05_09 {
 
         String nameOfStudent = "";
 
-     
+
         System.out.print("Enter the number of students : ");
 
         int numberOfStudents = input.nextInt();
@@ -57,7 +57,7 @@ public class Question_05_09 {
         }
 
 
-        System.out.printf("The Highest Score Student is %s with %d" +
+        System.out.printf("\n\nThe Highest Score Student is %s with %d" +
                         "\n\nThe Second Highest Score Student is %s with %d"
                 , nameOfHighestScoreStudent, scoreOfHighestScoreStudent,
                 nameOfSecondHighestScoreStudent, scoreOfSecondHighestScoreStudent);
