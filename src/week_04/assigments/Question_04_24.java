@@ -11,11 +11,11 @@ public class Question_04_24 {
 
         String firstCity = input.nextLine();
 
-        System.out.print("Enter the first city : ");
+        System.out.print("Enter the second city : ");
 
         String secondCity = input.nextLine();
 
-        System.out.print("Enter the first city : ");
+        System.out.print("Enter the third city : ");
 
         String thirdCity = input.nextLine();
 
