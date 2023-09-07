@@ -27,7 +27,7 @@ public class Question_05_37 {
             binaryNumber = remainder.concat(binaryNumber);
         }
 
-        System.out.println(binaryNumber);
+        System.out.printf("The binary value of the decimal \"%d\" is : %s",decimalNumber,binaryNumber);
 
 
     }
