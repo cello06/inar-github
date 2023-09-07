@@ -13,10 +13,9 @@ public class Question_05_01 {
         double sum = 0;
         int count = 0;
 
+        System.out.print("Enter an integer, the input ends if it is 0 : ");
 
         do {
-
-            System.out.print("Enter an integer, the input ends if it is 0 : ");
 
             number = input.nextInt();
 
