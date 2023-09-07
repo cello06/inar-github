@@ -7,13 +7,13 @@ public class Question_05_03 {
 
         double pound ;
 
-        System.out.println("Kilograms    Pounds");
+        System.out.printf("%-10s%10s\n","Kilograms","Pounds");
 
         while (kilograms<=199){
 
             pound  = kilograms*2.2;
 
-            System.out.printf("%-8d      %5.1f",kilograms,pound);
+            System.out.printf("%-10d%10.1f",kilograms,pound);
 
             System.out.println();
 
