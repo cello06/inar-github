@@ -7,7 +7,7 @@ public class Question_05_02 {
 
         Scanner input = new Scanner(System.in);
 
-        final int NUMBER_OF_QUESTİON=10;
+        final int NUMBER_OF_QUESTİON = 10;
 
         int currentQuestion = 1;
 
@@ -19,26 +19,35 @@ public class Question_05_02 {
 
         int number2;
 
-        long startTime=System.currentTimeMillis();
+        String results="";
+
+        long startTime = System.currentTimeMillis();
 
 
-        while(currentQuestion<=NUMBER_OF_QUESTİON){
+        while (currentQuestion <= NUMBER_OF_QUESTİON) {
 
 
-            number1=(int)(Math.random()*15)+1;
+            number1 = (int) (Math.random() * 15) + 1;
 
-            number2=(int)(Math.random()*15)+1;
+            number2 = (int) (Math.random() * 15) + 1;
 
 
-            System.out.printf("What is %d + %d = ? --> ",number1,number2);
+            System.out.printf("What is %d + %d = ? --> ", number1, number2);
 
             answer = input.nextInt();
 
 
-            if(answer == (number1+number2)){
+            if (answer == (number1 + number2)) {
+                System.out.println("You are correct!");
+
+                results+=""+number1+" + "+number2+" = "+answer+" correct\n";
 
                 correctCount++;
 
+            } else {
+                System.out.println("Your answer is wrong." +
+                        "\n" + number1 + " + " + number2 + " should be " + (number1 + number2));
+                results+=""+number1+" + "+number2+" = "+answer+" wrong \n";
             }
 
             currentQuestion++;
@@ -48,10 +57,10 @@ public class Question_05_02 {
 
         long finishTime = System.currentTimeMillis();
 
-        int testTime = (int)((finishTime-startTime)/1000);
+        int testTime = (int) ((finishTime - startTime) / 1000);
 
-        System.out.printf("The correct number is --> %d\n"+
-                "Test time is --> %d seconds ",correctCount,testTime);
+        System.out.printf("\n\nThe correct number is --> %d\n" +
+                "Test time is --> %d seconds \n\n%s", correctCount, testTime,results);
 
     }
 }
