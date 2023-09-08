@@ -7,13 +7,13 @@ public class Question_05_04 {
 
         double kilometers;
 
-        System.out.println("Miles         Kilometers");
+        System.out.printf("%-10s%10s\n","Miles","Kilometers");
 
         for (miles=1;miles<=10;miles++){
 
             kilometers=miles*1.609;
 
-            System.out.printf("%-8d      %.3f",miles,kilometers);
+            System.out.printf("%-10d%-10.3f",miles,kilometers);
             System.out.println();
         }
 
