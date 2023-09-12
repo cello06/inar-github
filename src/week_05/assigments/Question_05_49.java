@@ -20,23 +20,22 @@ public class Question_05_49 {
 
         for (int i = 0; i <= yourStr.length() - 1; i++) {
 
-            if (yourStr.charAt(i) == 'a'
-                    || yourStr.charAt(i) == 'e'
-                    || yourStr.charAt(i) == 'i'
-                    || yourStr.charAt(i) == 'o'
-                    || yourStr.charAt(i) == 'u') {
+            char ch = yourStr.charAt(i);
+            if (Character.isLetter(ch)) {
 
-                numberOfVowels++;
+                if (yourStr.charAt(i) == 'a'
+                        || yourStr.charAt(i) == 'e'
+                        || yourStr.charAt(i) == 'i'
+                        || yourStr.charAt(i) == 'o'
+                        || yourStr.charAt(i) == 'u') {
 
-            } else if (yourStr.charAt(i) == ' ') {
+                    numberOfVowels++;
 
-                continue;
+                } else {
 
-            } else {
-
-                numberOfConsonants++;
+                    numberOfConsonants++;
+                }
             }
-
         }
 
         System.out.printf("The number of vowels is %d\n" +
