@@ -8,7 +8,6 @@ public class Question_05_49 {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter a string : ");
-
         String yourStr = input.nextLine();
 
         yourStr = yourStr.toLowerCase();

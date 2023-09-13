@@ -8,29 +8,19 @@ public class Question_05_41 {
         Scanner input = new Scanner(System.in);
 
         int maxNumber = 0;
-
         int countMax = 0;
-
         int number = 0;
-
 
         System.out.println("Enter integers (it ends with input of 0) : ");
 
-
         do {
-
             number = input.nextInt();
 
             if (number > maxNumber) {
-
                 maxNumber = number;
-
                 countMax = 1;
-
             } else if (number == maxNumber) {
-
                 countMax++;
-
             }
 
         } while (number != 0);
