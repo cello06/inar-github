@@ -11,14 +11,12 @@ public class Question_05_26 {
             sum+=partOfSum;
             partOfSum=1;
 
-            if(i==10_000){
-                System.out.println("e at i = 10_000 is -->"+sum);
+            if(i%10_000==0){
+                System.out.println("e at i = "+i+" is -->"+sum);
             }
-            if (i==20_000){
-                System.out.println("e at i = 20_000 is -->"+sum);
-            }
+
         }
-        System.out.println("e at i = 100_000 -->"+sum);
+       
         System.out.println("Java's e is -->"+Math.E);
     }
 }
