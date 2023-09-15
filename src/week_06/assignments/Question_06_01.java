@@ -8,7 +8,7 @@ public class Question_06_01 {
         int number = 1;
         while (number <= NUMBER_OF_PENTAGONAL_NUMBER_TO_DISPLAY) {
 
-            int pentagonalNumber = convertToPentagonal(number);
+            int pentagonalNumber = getPentagonalNumber(number);
 
             printPentagonalNumber(pentagonalNumber, number);
 
@@ -17,7 +17,7 @@ public class Question_06_01 {
 
     }
 
-    public static int convertToPentagonal(int number) {
+    public static int getPentagonalNumber(int number) {
         int pentagonalNumber = number * ((3 * number) - 1) / 2;
         return pentagonalNumber;
     }
