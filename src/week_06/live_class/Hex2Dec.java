@@ -6,7 +6,7 @@ public class Hex2Dec {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a heximal number : ");
-        String hexNumber = input.nextLine();
+        String hexNumber = input.nextLine().toUpperCase();
         int decimalNumber = hex2Dec(hexNumber);
         System.out.println(decimalNumber);
     }
