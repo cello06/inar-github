@@ -16,6 +16,7 @@ public class Question_06_01 {
         }
 
     }
+
     public static int convertToPentagonal(int number) {
         int pentagonalNumber = number * ((3 * number) - 1) / 2;
         return pentagonalNumber;
