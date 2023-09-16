@@ -6,7 +6,7 @@ public class Question_06_14 {
     }
 
     public static void printTable() {
-        System.out.println("i               m(i)");
+        System.out.println("i          m(i)");
         System.out.println("------------------------");
         int number = 1;
 
