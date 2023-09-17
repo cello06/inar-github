@@ -12,7 +12,7 @@ public class Question_06_26 {
         int count = 0;
         int number = 2;
 
-        while (count <= COUNT_OF_PALINDROMIC_PRIME_NUMBER) {
+        while (count < COUNT_OF_PALINDROMIC_PRIME_NUMBER) {
             if (isPrime(number) && isPalindrome(number)) {
                 if (count % PALINDROMIC_PRIME_NUMBER_PER_LINE == 0) {
                     System.out.printf("\n%-10d", number);
