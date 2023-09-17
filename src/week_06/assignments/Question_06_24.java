@@ -107,7 +107,7 @@ public class Question_06_24 {
             }
             currentMonth++;
         }
-        currentDay = (int) totalDays;
+        currentDay += (int) totalDays;
 
         switch (date) {
             case "day":
