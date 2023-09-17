@@ -12,7 +12,7 @@ public class Question_06_28 {
         System.out.printf("%-10s%s", "p", "2^p-1\n");
         System.out.print("----------------");
 
-        while (count < COUNT_OF_MERSENNE_NUMBER) {
+        while (count <= COUNT_OF_MERSENNE_NUMBER) {
             if (isPrime(number)) {
                 if (isMersennePrime(number)) {
                     System.out.printf("\n%-10d%5d", number, getMersenne(number));
