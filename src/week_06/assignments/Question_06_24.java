@@ -86,21 +86,8 @@ public class Question_06_24 {
             currentYear++;
         }
 
-        while ((totalDays > 31)) {
-            if (currentMonth == 1 || currentMonth == 3 || currentMonth == 5
-                    || currentMonth == 7 || currentMonth == 8 || currentMonth == 10
-                    || currentMonth == 12) {
-                totalDays -= 31;
-            } else if (currentMonth == 4 || currentMonth == 6 || currentMonth == 9
-                    || currentMonth == 11) {
-                totalDays -= 30;
-            } else {
-                if (isLeapYear(currentYear)) {
-                    totalDays -= 29;
-                } else {
-                    totalDays -= 28;
-                }
-            }
+        while ((totalDays > daysInMmonth(currentMonth))) {
+           totalDays -= daysInMmonth(currentMonth);
             currentMonth++;
         }
         currentDay += (int) totalDays;
@@ -133,6 +120,24 @@ public class Question_06_24 {
             return 365;
         }
     }
-   
+    public static int daysInMmonth(int month){
+        int days;
+        if (month == 1 || month == 3 || month == 5
+                || month == 7 || month == 8 || month == 10
+                || month == 12) {
+            days= 31;
+        } else if (month == 4 || month == 6 || month == 9
+                || month == 11) {
+            days= 30;
+        } else {
+            if (isLeapYear(month)) {
+                days = 29;
+            } else {
+                days = 28;
+            }
+        }
+        return days;
+    }
+
 
 }
