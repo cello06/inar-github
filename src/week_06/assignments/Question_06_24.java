@@ -81,16 +81,26 @@ public class Question_06_24 {
         int currentMonth = 1;
         int currentDay = 1;
 
-        while (totalDays > daysInYear(currentYear)) {
+        while (totalDays >= daysInYear(currentYear)) {
             totalDays -= daysInYear(currentYear);
             currentYear++;
         }
 
-        while ((totalDays > daysInMmonth(currentMonth))) {
+        while ((totalDays >= daysInMmonth(currentMonth))) {
            totalDays -= daysInMmonth(currentMonth);
             currentMonth++;
         }
+
         currentDay += (int) totalDays;
+        if(currentDay > daysInMmonth(currentMonth)){
+            currentDay = currentDay % 31;
+            currentMonth++;
+
+        }
+        if(currentMonth > 12){
+            currentMonth = currentMonth % 12;
+            currentYear++;
+        }
 
         switch (date) {
             case "day":
