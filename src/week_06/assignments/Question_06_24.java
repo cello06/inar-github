@@ -81,12 +81,8 @@ public class Question_06_24 {
         int currentMonth = 1;
         int currentDay = 1;
 
-        while (totalDays > 365) {
-            if (isLeapYear(currentYear)) {
-                totalDays -= 366;
-            } else {
-                totalDays -= 365;
-            }
+        while (totalDays > daysInYear(currentYear)) {
+            totalDays -= daysInYear(currentYear);
             currentYear++;
         }
 
@@ -129,5 +125,14 @@ public class Question_06_24 {
             return false;
         }
     }
+
+    public static int daysInYear(int year) {
+        if (isLeapYear(year)) {
+            return 366;
+        } else {
+            return 365;
+        }
+    }
+   
 
 }
