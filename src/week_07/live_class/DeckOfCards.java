@@ -2,13 +2,13 @@ package week_07.live_class;
 
 public class DeckOfCards {
     public static void main(String[] args) {
-        int[] deck = createDeck();
+        int[] deck = creatDeck();
         deck = shuffleDeck(deck);
         for (int i = 1; i <= 4; i++) {
             printRandomCard(deck);
         }
     }
-    public static int[] createDeck(){
+    public static int[] creatDeck(){
         int [] deck = new int[52];
         for (int i = 0; i < deck.length; i++) {
             deck[i] = i;
