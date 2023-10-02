@@ -10,12 +10,14 @@ public class Question_07_03 {
 
     public static int[] getCountsOfNumbers() {
         Scanner input = new Scanner(System.in);
-        int[] numbers = new int[100];
+        int[] numbers = new int[101];
         System.out.print("Enter the integers between 1 and 100 : ");
         for (int number : numbers) {
             number = input.nextInt();
             if (number == 0) {
                 break;
+            } else if(number == 100){
+                numbers[100]++;
             } else {
                 numbers[number % 100]++;
             }
