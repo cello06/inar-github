@@ -19,7 +19,7 @@ public class Question_07_13 {
         return excludedNumbers;
     }
 
-    public static int getRandom(int[] excludedNumbers) {
+    public static int getRandom(int...excludedNumbers) {
         int random = (int) (Math.random() * 55 + 1);
         for (int i = 0; i < excludedNumbers.length; i++) {
             if (random == excludedNumbers[i]) {
