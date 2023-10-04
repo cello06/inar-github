@@ -13,6 +13,7 @@ public class Question_07_17 {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter the name a score for each student : ");
+
         String[] namesAndScoresOfStudents = new String[countOfStudents * 2];
         int[] scoresOfStudent = new int[countOfStudents];
         int index = 0;
@@ -38,10 +39,12 @@ public class Question_07_17 {
 
     public static void printNameOfStudentsAccordingToScores
             (String[] namesAndScoresOfStudents, int[] scoresOfStudent) {
+        int index = -1;
         for (int i = scoresOfStudent.length - 1; i >= 0; i--) {
             for (int j = 0; j < namesAndScoresOfStudents.length; j += 2) {
                 if (namesAndScoresOfStudents[j + 1].equals("" + scoresOfStudent[i])) {
-                    System.out.println(namesAndScoresOfStudents[j]);
+
+                        System.out.println(namesAndScoresOfStudents[j]);
                 }
             }
         }
