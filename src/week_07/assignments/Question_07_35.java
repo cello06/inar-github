@@ -44,13 +44,9 @@ public class Question_07_35 {
                         if (isMissed) {
                             System.out.println(letter.charAt(0) + " is not in the word");
                             missed++;
-                            break;
-                        } else {
-                            break;
                         }
-                    } else {
-                        break;
                     }
+                    break;
                 }
                 for (int i = 0; i < result.length; i++) {
                     if (randomWord.charAt(i) != result[i]) {
@@ -68,8 +64,6 @@ public class Question_07_35 {
                         keepGameContinue = false;
                     }
                 }
-
-
             }
         }
     }
