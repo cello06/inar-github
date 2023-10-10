@@ -10,19 +10,13 @@ public class Question_07_23 {
             students[i] = i + 1;
         }
         for (int i = 0; i < students.length; i++) {
-            for (int j = i; j < lockers.length; j += i) {//This part is important !!
+            for (int j = i; j < lockers.length; j++) {//This part is important !!
                 if (students[i] == 1) {
                     Arrays.fill(lockers, true);
                     break;
-                } else if (students[i] == 2) {
-                    Arrays.fill(lockers, false);
-                    lockers[i] = true;
-                    break;
                 } else {
-                    if (i == j) continue;
                     lockers[j] = !lockers[j];
-
-
+                    j += i;
                 }
             }
         }
