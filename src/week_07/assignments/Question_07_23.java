@@ -10,7 +10,7 @@ public class Question_07_23 {
             students[i] = i + 1;
         }
         for (int i = 0; i < students.length; i++) {
-            for (int j = i; j < lockers.length; j++) {//This part is important !!
+            for (int j = i; j < lockers.length; j++) {
                 if (students[i] == 1) {
                     Arrays.fill(lockers, true);
                     break;
