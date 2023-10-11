@@ -6,7 +6,7 @@ public class Question_07_07 {
 
         for (int i = 0; i < 100; i++) {
             int randomNumber = (int) (Math.random() * 10);
-            counts[randomNumber % 10]++;
+            counts[randomNumber]++;
         }
         printCounts(counts);
     }

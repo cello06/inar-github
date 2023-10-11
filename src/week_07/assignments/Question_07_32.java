@@ -8,6 +8,8 @@ public class Question_07_32 {
         int indexOfPivotAfterPartition = partition(list);
         int[] newList = listAfterPartition(list, indexOfPivotAfterPartition);
         printList(newList);
+       //6 8 8 5 6 2 4 7 4 10
+        //2 6 5 4 4 6 8 7 8 10
     }
 
     public static int[] getList() {
