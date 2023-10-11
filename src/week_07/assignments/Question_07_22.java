@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Question_07_22 {
     public static void main(String[] args) {
-
+        
         int availableIndex;
         boolean isAvailable = true;
         int firstLineQueenIndex = 0;
@@ -115,6 +115,7 @@ public class Question_07_22 {
                 seventhLineQueenIndex, eightLineQueenIndex};
 
         printEightQueens(queenPlaces);
+
 
     }
 
