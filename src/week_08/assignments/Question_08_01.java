@@ -21,6 +21,7 @@ public class Question_08_01 {
     }
 
     public static void printSumOfColumns(double[][] matrix) {
+
         for (int column = 0; column < matrix[0].length; column++) {
             double sumOfThisColumn = 0;
             for (int row = 0; row < matrix.length; row++) {
