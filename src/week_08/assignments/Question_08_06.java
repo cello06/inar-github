@@ -42,6 +42,7 @@ public class Question_08_06 {
     }
 
     public static void printCalculation(double[][] matrix1, double[][] matrix2, double[][] result) {
+        System.out.println("The multiplication of the matrices is");
         for (int row = 0; row < result.length; row++) {
             for (int columnOfMatrix1 = 0; columnOfMatrix1 < matrix1[row].length; columnOfMatrix1++) {
                 System.out.printf("%3.1f ", matrix1[row][columnOfMatrix1]);
