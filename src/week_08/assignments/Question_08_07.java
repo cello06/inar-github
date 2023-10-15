@@ -26,11 +26,11 @@ public class Question_08_07 {
                 double y2 = points[secondRow][1];
                 double z2 = points[secondRow][2];
 
+                double currentDistance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2));
 
                 if (row == 0) {
-                    shortestDistance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2));
+                    shortestDistance = currentDistance;
                 } else {
-                    double currentDistance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2));
                     if (shortestDistance > currentDistance) {
                         shortestDistance = currentDistance;
                         resultX1 = x1;
