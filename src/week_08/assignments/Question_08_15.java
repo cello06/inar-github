@@ -7,6 +7,7 @@ public class Question_08_15 {
         double[][] points = getPoints();
         printArray(points);
         sortPoint(points);// I don't know if it is necessary.
+       printArray(points);
         printIfPointsOnTheSameLineOrNot(points);
     }
 
@@ -23,19 +24,22 @@ public class Question_08_15 {
     }
 
     public static void sortPoint(double[][] points) {
-
+        double[] currentMinXY = new double[2];
         for (int point = 0; point < points.length; point++) {
-            double currentMinX = points[point][0];
-            int indexOfCurrentMinX = point;
+             currentMinXY[0] = points[point][0];
+            int indexOfCurrentMinXY = point;
             for (int secondPoint = point + 1; secondPoint < points.length; secondPoint++) {
-                if (currentMinX > points[secondPoint][0]) {
-                    currentMinX = points[secondPoint][0];
-                    indexOfCurrentMinX = secondPoint;
+                if (currentMinXY[0] > points[secondPoint][0]) {
+                    currentMinXY[0] = points[secondPoint][0];
+                    currentMinXY[1] = points[secondPoint][1];
+                    indexOfCurrentMinXY = secondPoint;
                 }
             }
-            if (indexOfCurrentMinX != point) {
-                points[indexOfCurrentMinX][0] = points[point][0];
-                points[point][0] = currentMinX;
+            if (indexOfCurrentMinXY != point) {
+                points[indexOfCurrentMinXY][0] = points[point][0];
+                points[indexOfCurrentMinXY][1] = points[point][1];
+                points[point][0] = currentMinXY[0];
+                points[point][1] = currentMinXY[1];
             }
         }
         for (int point = 0; point < points.length - 1; point++) {
