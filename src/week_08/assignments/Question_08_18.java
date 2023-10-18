@@ -22,7 +22,8 @@ public class Question_08_18 {
         //    array[row][column] = input.nextInt();
         // }
         //}
-        int[][] m = {{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}};// for testing 
+        //
+        int[][] m = {{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}};// for testing
         return m;
     }
 
