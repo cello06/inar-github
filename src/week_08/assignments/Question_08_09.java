@@ -14,12 +14,17 @@ public class Question_08_09 {
         while (true) {
             printGameGrid(ticTacToeGrid);
 
-            System.out.print("Enter a row(0,1 or 2) for player X : ");
-            int rowX = input.nextInt();
-            System.out.print("Enter a column(0,1 or 2) for player X : ");
-            int columnX = input.nextInt();
-            ticTacToeGrid[rowX][columnX] = 'X';
-
+            while(true){
+                System.out.print("Enter a row(0,1 or 2) for player X : ");
+                int rowX = input.nextInt();
+                System.out.print("Enter a column(0,1 or 2) for player X : ");
+                int columnX = input.nextInt();
+                if(isAvailable(ticTacToeGrid,rowX,columnX)){
+                    ticTacToeGrid[rowX][columnX] = 'X';
+                    break;
+                }
+                System.out.println("Invalid input !");
+            }
             if (isGameFinished(ticTacToeGrid)) {
                 printGameGrid(ticTacToeGrid);
                 System.out.println("X player won");
@@ -31,12 +36,18 @@ public class Question_08_09 {
             }
 
             printGameGrid(ticTacToeGrid);
+            while(true){
+                System.out.print("Enter a row(0,1 or 2) for player O : ");
+                int rowO = input.nextInt();
+                System.out.print("Enter a column(0,1 or 2) for player O : ");
+                int columnO = input.nextInt();
+                if(isAvailable(ticTacToeGrid,rowO,columnO)){
+                    ticTacToeGrid[rowO][columnO] = 'O';
+                    break;
+                }
+                System.out.println("Invalid input !");
+            }
 
-            System.out.print("Enter a row(0,1 or 2) for player O : ");
-            int rowO = input.nextInt();
-            System.out.print("Enter a column(0,1 or 2) for player O : ");
-            int columnO = input.nextInt();
-            ticTacToeGrid[rowO][columnO] = 'O';
 
             if (isGameFinished(ticTacToeGrid)) {
                 printGameGrid(ticTacToeGrid);
@@ -49,6 +60,19 @@ public class Question_08_09 {
                 break;
             }
         }
+    }
+    public static boolean isAvailable(char[][] ticTacToeGrid,int row,int column){
+        if(row < 0
+                || row > ticTacToeGrid.length
+                || column < 0
+                || column > ticTacToeGrid[row].length){
+            return false;
+        }
+        if(ticTacToeGrid[row][column] == 'X'
+                || ticTacToeGrid[row][column] == 'O'){
+            return false;
+        }
+        return true;
     }
 
     public static void printGameGrid(char[][] ticTacToeGrid) {
