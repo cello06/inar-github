@@ -99,9 +99,9 @@ public class Question_08_19 {
 
     public static boolean checkSubDiagonal(int[][] array) {
         for (int mainRow = 0; mainRow < array.length - 3; mainRow++) {
-            for (int mainColumn = array[mainRow].length; mainColumn >= 3; mainColumn++) {
+            for (int mainColumn = array[mainRow].length; mainColumn >= 3; mainColumn--) {
                 for (int row = mainRow; row < array.length - 3; row++) {
-                    for (int column = mainColumn; column >= 3; column++) {
+                    for (int column = mainColumn; column >= 3; column--) {
                         if (array[row][column] == array[row + 1][column - 1] &&
                                 array[row][row] == array[row + 2][column - 2] &&
                                 array[row][row] == array[row + 3][column - 3]) {
