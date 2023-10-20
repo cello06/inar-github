@@ -22,9 +22,7 @@ public class Question_08_28 {
     }
 
     public static void printStateOfIdentical(int[][] list1, int[][] list2) {
-        System.out.println("The two arrays are " + (equals(list1, list2) ? "" : "not ") + "identical");
-
-
+        System.out.println("The two arrays are " + (equals(list1, list2) ? "" : "not ") + "strictly identical");
     }
 
     public static boolean equals(int[][] list1, int[][] list2) {
