@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Question_08_33 {
     public static void main(String[] args) {
         double[][] points = getPoints();
+        double[] intersectingPoint = getIntersectingPoint(points);
 
-        double[] areas = getAreas(points);
+        double[] areas = getAreas(points, intersectingPoint);
         sort(areas);
         printAreas(areas);
     }
@@ -23,7 +24,34 @@ public class Question_08_33 {
         return points;
     }
 
-    public static double[] getAreas(double[][] points) {
+    public static double[] getIntersectingPoint(double[][] points) {
+        double[] intersectingPoint = new double[2];
+
+        double a = points[0][1] - points[1][1];
+        double b = points[0][0] - points[1][0];
+        double c = points[2][1] - points[3][1];
+        double d = points[2][0] - points[3][0];
+
+        double e = (a * points[0][0]) - (b * points[0][1]);
+        double f = (c * points[2][0]) - (d * points[2][1]);
+
+        double determinant = (a * d) - (b * c);
+
+        if (Math.abs(determinant) < 1e-6) {
+            // Lines are either parallel or coincident, handle as needed
+            intersectingPoint[0] = Double.POSITIVE_INFINITY; // x-coordinate for parallel lines
+            intersectingPoint[1] = Double.POSITIVE_INFINITY; // y-coordinate for parallel lines
+        } else {
+            double x = (e * d - b * f) / determinant;
+            double y = (a * f - e * c) / determinant;
+            intersectingPoint[0] = x;
+            intersectingPoint[1] = y;
+        }
+
+        return intersectingPoint;
+    }
+
+    public static double[] getAreas(double[][] points, double[] intersectingPoint) {
         double xOfPoint1 = points[0][0];
         double yOfPoint1 = points[0][1];
         double xOfPoint2 = points[1][0];
@@ -32,11 +60,12 @@ public class Question_08_33 {
         double yOfPoint3 = points[2][1];
         double xOfPoint4 = points[3][0];
         double yOfPoint4 = points[3][1];
-
-        double area1 = getArea(xOfPoint1, yOfPoint1, xOfPoint2, yOfPoint2, xOfPoint3, yOfPoint3);
-        double area2 = getArea(xOfPoint2, yOfPoint2, xOfPoint3, yOfPoint3, xOfPoint4, yOfPoint4);
-        double area3 = getArea(xOfPoint3, yOfPoint3, xOfPoint4, yOfPoint4, xOfPoint1, yOfPoint1);
-        double area4 = getArea(xOfPoint4, yOfPoint4, xOfPoint1, yOfPoint1, xOfPoint2, yOfPoint2);
+        double xOfInterSec = intersectingPoint[0];
+        double yOfInterSec = intersectingPoint[1];
+        double area1 = getArea(xOfPoint1, yOfPoint1, xOfPoint2, yOfPoint2,xOfInterSec , yOfInterSec);
+        double area2 = getArea(xOfPoint2, yOfPoint2, xOfPoint3, yOfPoint3, xOfInterSec, yOfInterSec);
+        double area3 = getArea(xOfPoint3, yOfPoint3, xOfPoint4, yOfPoint4, xOfInterSec, yOfInterSec);
+        double area4 = getArea(xOfPoint4, yOfPoint4, xOfPoint1, yOfPoint1, xOfInterSec, yOfInterSec);
 
         return new double[]{area1, area2, area3, area4};
     }
