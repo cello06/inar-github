@@ -4,146 +4,128 @@ import java.util.Scanner;
 
 public class Question_08_09 {
     public static void main(String[] args) {
-        gameOfTicTacToe();// :)
-    }
-
-    public static void gameOfTicTacToe() {
         Scanner input = new Scanner(System.in);
-        char[][] ticTacToeGrid = new char[3][3];
-        fillWithBlank(ticTacToeGrid);
-        while (true) {
-            printGameGrid(ticTacToeGrid);
+        char[][] grid = new char[3][3];
+        displayTable(grid);
+        char[] tokens = {'X', 'O'};
 
-            while(true){
-                System.out.print("Enter a row(0,1 or 2) for player X : ");
-                int rowX = input.nextInt();
-                System.out.print("Enter a column(0,1 or 2) for player X : ");
-                int columnX = input.nextInt();
-                if(isAvailable(ticTacToeGrid,rowX,columnX)){
-                    ticTacToeGrid[rowX][columnX] = 'X';
-                    break;
-                }
-                System.out.println("Invalid input !");
-            }
-            if (isGameFinished(ticTacToeGrid)) {
-                printGameGrid(ticTacToeGrid);
-                System.out.println("X player won");
-                break;
-            }
-            if (isGameDraw(ticTacToeGrid)) {
-                System.out.println("It is a draw");
-                break;
+        do {
+            System.out.print("Enter a row(0 ,1 or 2) for player " + tokens[0] + " :");
+            int row = input.nextInt();
+            System.out.print("Enter a column(0 ,1 or 2) for player " + tokens[0] + " :");
+            int column = input.nextInt();
+            if (isAvailable(row, column, grid)) {
+                putToken(row, column, grid, tokens[0]);
+                displayTable(grid);
+                swapTokens(tokens);
+            } else {
+                System.out.println("Invalid input ");
             }
 
-            printGameGrid(ticTacToeGrid);
-            while(true){
-                System.out.print("Enter a row(0,1 or 2) for player O : ");
-                int rowO = input.nextInt();
-                System.out.print("Enter a column(0,1 or 2) for player O : ");
-                int columnO = input.nextInt();
-                if(isAvailable(ticTacToeGrid,rowO,columnO)){
-                    ticTacToeGrid[rowO][columnO] = 'O';
-                    break;
-                }
-                System.out.println("Invalid input !");
-            }
+        } while (!isWin(grid) && !isDraw(grid));
 
-
-            if (isGameFinished(ticTacToeGrid)) {
-                printGameGrid(ticTacToeGrid);
-                System.out.println("O player won");
-                break;
-            }
-            if (isGameDraw(ticTacToeGrid)) {
-                printGameGrid(ticTacToeGrid);
-                System.out.println("It is a draw");
-                break;
-            }
+        if (isWin(grid)) {
+            System.out.println(tokens[1] + " player won");
+        } else {
+            System.out.println("it is draw!");
         }
     }
-    public static boolean isAvailable(char[][] ticTacToeGrid,int row,int column){
-        if(row < 0
-                || row > ticTacToeGrid.length
-                || column < 0
-                || column > ticTacToeGrid[row].length){
+
+    public static void displayTable(char[][] grid) {
+        System.out.println("---------------");
+        for (int row = 0; row < grid.length; row++) {
+            for (int column = 0; column < grid[row].length; column++) {
+                System.out.print("| " + (grid[row][column] == (char) (0) ? "  " : grid[row][column] + " "));
+            }
+            System.out.println("|");
+            System.out.println("---------------");
+        }
+    }
+
+    public static boolean isAvailable(int row, int column, char[][] grid) {
+        if (row < 0 || row > 2 || column < 0 || column > 2) {
             return false;
         }
-        if(ticTacToeGrid[row][column] == 'X'
-                || ticTacToeGrid[row][column] == 'O'){
+        if (grid[row][column] != (char) (0)) {
             return false;
         }
         return true;
     }
 
-    public static void printGameGrid(char[][] ticTacToeGrid) {
-        for (int row = 0; row < ticTacToeGrid.length; row++) {
-            System.out.print("-------------\n| ");
-            for (int column = 0; column < ticTacToeGrid[row].length; column++) {
-                System.out.print(ticTacToeGrid[row][column] + " | ");
-            }
-            System.out.println();
-        }
-        System.out.println("-------------");
+    public static void putToken(int row, int column, char[][] grid, char token) {
+        grid[row][column] = token;
     }
 
-    public static boolean isGameFinished(char[][] ticTacToeGrid) {
-        //row check
-        for (int row = 0; row < ticTacToeGrid.length; row++) {
-            if ((ticTacToeGrid[row][0] == 'X' &&
-                    ticTacToeGrid[row][1] == 'X'
-                    && ticTacToeGrid[row][2] == 'X') ||
-                    (ticTacToeGrid[row][0] == 'O' &&
-                            ticTacToeGrid[row][1] == 'O'
-                            && ticTacToeGrid[row][2] == 'O')) {
-                return true;
+    public static void swapTokens(char[] tokens) {
+        char temp = tokens[0];
+        tokens[0] = tokens[1];
+        tokens[1] = temp;
+    }
+
+    public static boolean isWin(char[][] grid) {
+        return rowCheck(grid) || columnCheck(grid) || diagonalsCheck(grid);
+    }
+
+    public static boolean rowCheck(char[][] grid) {
+        for (int row = 0; row < grid.length; row++) {
+            int count = 0;
+            for (int column = 0; column < grid[row].length - 1; column++) {
+                if (grid[row][column] != (char) (0) && grid[row][column] == grid[row][column + 1]) {
+                    count++;
+                }
+                if (count == grid.length - 1) {
+                    return true;
+                }
             }
-        }
-        // column check
-        for (int column = 0; column < ticTacToeGrid[0].length; column++) {
-            if ((ticTacToeGrid[0][column] == 'X' &&
-                    ticTacToeGrid[1][column] == 'X'
-                    && ticTacToeGrid[2][column] == 'X') ||
-                    (ticTacToeGrid[0][column] == 'O' &&
-                            ticTacToeGrid[1][column] == 'O'
-                            && ticTacToeGrid[2][column] == 'O')) {
-                return true;
-            }
-        }
-        //diagonal check
-        if ((ticTacToeGrid[0][0] == 'X'
-                && ticTacToeGrid[1][1] == 'X'
-                && ticTacToeGrid[2][2] == 'X') ||
-                (ticTacToeGrid[0][2] == 'X'
-                        && ticTacToeGrid[1][1] == 'X'
-                        && ticTacToeGrid[2][0] == 'X') ||
-                (ticTacToeGrid[0][0] == 'O'
-                        && ticTacToeGrid[1][1] == 'O'
-                        && ticTacToeGrid[2][2] == 'O') ||
-                (ticTacToeGrid[0][2] == 'O'
-                        && ticTacToeGrid[1][1] == 'O'
-                        && ticTacToeGrid[2][0] == 'O')) {
-            return true;
         }
         return false;
     }
 
-    public static void fillWithBlank(char[][] grid) {
-        for (int row = 0; row < grid.length; row++) {
-            for (int column = 0; column < grid[row].length; column++) {
-                grid[row][column] = ' ';
-            }
-        }
-    }
-
-    public static boolean isGameDraw(char[][] grid) {
-        int countOfSpace = 0;
-        for (int row = 0; row < grid.length; row++) {
-            for (int column = 0; column < grid[row].length; column++) {
-                if (grid[row][column] == ' ') {
-                    countOfSpace++;
+    public static boolean columnCheck(char[][] grid) {
+        for (int col = 0; col < grid[0].length; col++) {
+            int count = 0;
+            for (int row = 0; row < grid.length - 1; row++) {
+                if (grid[row][col] != (char) (0) && grid[row][col] == grid[row + 1][col]) {
+                    count++;
+                }
+                if (count == grid.length - 1) {
+                    return true;
                 }
             }
         }
-        return countOfSpace == 0;
+        return false;
+    }
+
+    public static boolean diagonalsCheck(char[][] grid) {
+        int count = 0;
+        for (int row = 0; row < grid.length - 1; row++) {
+            if (grid[row][row] != (char) (0) && grid[row][row] == grid[row + 1][row + 1]) {
+                count++;
+            }
+            if (count == grid.length - 1) {
+                return true;
+            }
+        }
+        count = 0;
+        for (int row = 0, column = grid[0].length - 1; row < grid.length - 1; column--, row++) {
+            if (grid[row][column] != (char) (0) && grid[row][column] == grid[row + 1][column - 1]) {
+                count++;
+            }
+            if (count == grid.length - 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isDraw(char[][] grid) {
+        for (int row = 0; row < grid.length; row++) {
+            for (int column = 0; column < grid[row].length; column++) {
+                if (grid[row][column] == (char) (0)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
