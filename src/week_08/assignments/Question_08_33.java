@@ -27,13 +27,13 @@ public class Question_08_33 {
     public static double[] getIntersectingPoint(double[][] points) {
         double[] intersectingPoint = new double[2];
 
-        double a = points[0][1] - points[1][1];
-        double b = points[0][0] - points[1][0];
-        double c = points[2][1] - points[3][1];
-        double d = points[2][0] - points[3][0];
+        double a = points[0][1] - points[2][1];
+        double b = points[2][0] - points[0][0];
+        double c = points[1][1] - points[3][1];
+        double d = points[3][0] - points[1][0];
 
-        double e = (a * points[0][0]) - (b * points[0][1]);
-        double f = (c * points[2][0]) - (d * points[2][1]);
+        double e = (a * points[0][0]) - ((-b) * points[0][1]);
+        double f = (c * points[1][0]) - ((-d) * points[1][1]);
 
         double determinant = (a * d) - (b * c);
 
