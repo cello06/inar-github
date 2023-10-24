@@ -24,7 +24,7 @@ public class Question_08_06 {
     }
 
     public static double[][] multiplyMatrix(double[][] matrix1, double[][] matrix2) {
-        double[][] multiply = new double[matrix1.length][matrix1[0].length];
+        double[][] multiply = new double[matrix1.length][matrix2[0].length];
         for (int row = 0; row < multiply.length; row++) {
             for (int column = 0; column < multiply[row].length; column++) {
                 multiply[row][column] = instantMultiply(row, column, matrix1, matrix2);
@@ -35,7 +35,7 @@ public class Question_08_06 {
 
     public static double instantMultiply(int row, int column, double[][] matrix1, double[][] matrix2) {
         double result = 0;
-        for (int i = 0; i < matrix1.length; i++) {
+        for (int i = 0; i < matrix1[0].length; i++) {
             result += (matrix1[row][i] * matrix2[i][column]);
         }
         return result;
@@ -43,25 +43,39 @@ public class Question_08_06 {
 
     public static void printCalculation(double[][] matrix1, double[][] matrix2, double[][] result) {
         System.out.println("The multiplication of the matrices is");
-        for (int row = 0; row < result.length; row++) {
-            for (int columnOfMatrix1 = 0; columnOfMatrix1 < matrix1[row].length; columnOfMatrix1++) {
-                System.out.printf("%3.1f ", matrix1[row][columnOfMatrix1]);
+        for (int row = 0; row < Math.max(matrix1.length, matrix2.length); row++) {
+            if (row < matrix1.length) {
+                for (int columnOfMatrix1 = 0; columnOfMatrix1 < matrix1[row].length; columnOfMatrix1++) {
+                    System.out.printf("%8.1f", matrix1[row][columnOfMatrix1]);
+                }
+            } else {
+                for (int i = 0; i < matrix1[0].length; i++) {
+                    System.out.print("        ");
+                }
             }
-            if (row == 1) {
+            if (row == result.length / 2) {
                 System.out.print("   *   ");
             } else {
                 System.out.print("       ");
             }
-            for (int columnOfMatrix2 = 0; columnOfMatrix2 < matrix2[row].length; columnOfMatrix2++) {
-                System.out.printf("%3.1f ", matrix2[row][columnOfMatrix2]);
+            if (row < matrix2.length) {
+                for (int columnOfMatrix2 = 0; columnOfMatrix2 < matrix2[row].length; columnOfMatrix2++) {
+                    System.out.printf("%8.1f", matrix2[row][columnOfMatrix2]);
+                }
+            } else {
+                for (int i = 0; i < matrix2[0].length; i++) {
+                    System.out.print("        ");
+                }
             }
-            if (row == 1) {
+            if (row == result.length / 2) {
                 System.out.print("   =   ");
             } else {
                 System.out.print("       ");
             }
-            for (int columnOfResult = 0; columnOfResult < result[row].length; columnOfResult++) {
-                System.out.printf("%3.1f ", result[row][columnOfResult]);
+            if (row < result.length) {
+                for (int columnOfResult = 0; columnOfResult < result[row].length; columnOfResult++) {
+                    System.out.printf("%8.1f", result[row][columnOfResult]);
+                }
             }
             System.out.println();
         }
