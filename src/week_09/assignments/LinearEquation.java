@@ -46,10 +46,10 @@ public class LinearEquation {
     }
 
     public double getX() {
-        return (getE() * getD() - getB() * getF()) / (getA() * getD() - getB() * getC());
+        return (getE() * getD() - getB() * getF()) / ((getA() * getD() - getB() * getC()));
     }
 
     public double getY() {
-        return (getA() * getF() - getE() * getC()) / (getA() * getD() - getB() * getC());
+        return (getA() * getF() - getE() * getC()) / ((getA() * getD() - getB() * getC()));
     }
 }
