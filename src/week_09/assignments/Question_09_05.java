@@ -13,7 +13,7 @@ public class Question_09_05 {
 
     public static void showDate(GregorianCalendar calendar) {
         System.out.println("Current year :" + calendar.get(GregorianCalendar.YEAR));
-        System.out.println("Current month :" + calendar.get(GregorianCalendar.MONTH));
+        System.out.println("Current month :" + (calendar.get(GregorianCalendar.MONTH)+1));//it starts from 0 as january,to make it show month I add 1
         System.out.println("Current day :" + calendar.get(GregorianCalendar.DAY_OF_MONTH));
     }
 }
