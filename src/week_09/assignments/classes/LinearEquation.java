@@ -8,7 +8,7 @@ public class LinearEquation {
     private double E;
     private double F;
 
-    LinearEquation(double A, double B, double C, double D, double E, double F) {
+    public LinearEquation(double A, double B, double C, double D, double E, double F) {
         this.A = A;
         this.B = B;
         this.C = C;

@@ -41,7 +41,7 @@ public class Fan {
         this.color = color;
     }
 
-    Fan() {
+    public Fan() {
     }
 
     @Override

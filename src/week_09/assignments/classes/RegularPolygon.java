@@ -5,12 +5,12 @@ public class RegularPolygon {
     private double side = 1;
     private double x = 0;
     private double y = 0;
-    RegularPolygon(){}
-    RegularPolygon(int n ,double side){
+    public RegularPolygon(){}
+    public RegularPolygon(int n, double side){
         this.n = n;
         this.side = side;
     }
-    RegularPolygon(int n ,double side,double x,double y){
+    public RegularPolygon(int n, double side, double x, double y){
         this.n = n;
         this.side = side;
         this.x = x;

@@ -12,7 +12,7 @@ public class Account {
         dateCreated = new Date();
     }
 
-    Account(int id, double initialBalance) {
+    public Account(int id, double initialBalance) {
         dateCreated = new Date();
         this.id = id;
         balance = initialBalance;
