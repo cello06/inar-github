@@ -1,4 +1,6 @@
-package week_09.assignments;
+package week_09.assignments.test;
+
+import week_09.assignments.classes.StopWatch;
 
 public class Question_09_06 {
     public static void main(String[] args) {

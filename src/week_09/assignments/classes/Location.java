@@ -1,4 +1,4 @@
-package week_09.assignments;
+package week_09.assignments.classes;
 
 public class Location {
     public int row;

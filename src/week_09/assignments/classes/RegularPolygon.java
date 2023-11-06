@@ -1,4 +1,4 @@
-package week_09.assignments;
+package week_09.assignments.classes;
 
 public class RegularPolygon {
     private int n = 3;

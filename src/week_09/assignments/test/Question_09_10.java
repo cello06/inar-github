@@ -1,4 +1,6 @@
-package week_09.assignments;
+package week_09.assignments.test;
+
+import week_09.assignments.classes.QuadraticEquation;
 
 import java.util.Scanner;
 

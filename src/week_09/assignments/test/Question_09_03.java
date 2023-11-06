@@ -1,4 +1,4 @@
-package week_09.assignments;
+package week_09.assignments.test;
 
 import java.util.Date;
 
