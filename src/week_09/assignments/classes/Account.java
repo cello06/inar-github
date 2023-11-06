@@ -12,6 +12,7 @@ public class Account {
         dateCreated = new Date();
     }
 
+
     public Account(int id, double initialBalance) {
         dateCreated = new Date();
         this.id = id;
