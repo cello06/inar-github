@@ -1,4 +1,4 @@
-package week_10.assignments;
+package week_10.assignments.classes;
 
 public class MyPoint {
     private double x;

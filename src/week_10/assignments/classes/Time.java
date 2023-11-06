@@ -1,6 +1,4 @@
-package week_10.assignments;
-
-import java.util.Date;
+package week_10.assignments.classes;
 
 public class Time {
     private int hour;

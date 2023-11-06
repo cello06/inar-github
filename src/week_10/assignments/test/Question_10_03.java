@@ -1,4 +1,6 @@
-package week_10.assignments;
+package week_10.assignments.test;
+
+import week_10.assignments.classes.MyInteger;
 
 public class Question_10_03 {
     public static void main(String[] args) {

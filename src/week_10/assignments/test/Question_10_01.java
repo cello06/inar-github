@@ -1,4 +1,6 @@
-package week_10.assignments;
+package week_10.assignments.test;
+
+import week_10.assignments.classes.Time;
 
 public class Question_10_01 {
     public static void main(String[] args) {

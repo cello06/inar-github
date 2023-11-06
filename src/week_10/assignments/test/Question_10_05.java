@@ -1,4 +1,6 @@
-package week_10.assignments;
+package week_10.assignments.test;
+
+import week_10.assignments.classes.StackOfIntegers;
 
 import java.util.Scanner;
 

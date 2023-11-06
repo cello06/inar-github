@@ -1,4 +1,6 @@
-package week_10.assignments;
+package week_10.assignments.test;
+
+import week_10.assignments.classes.MyPoint;
 
 public class Question_10_04 {
     public static void main(String[] args) {
