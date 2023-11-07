@@ -38,7 +38,10 @@ public class Time {
     }
 
     public void setTime(long elapsedTime) {
-        new Time(elapsedTime);
+        long totalSecond = elapsedTime / 1000;
+        second = (int) (totalSecond % 60);
+        minute = (int) ((totalSecond / 60) % 60);
+        hour = (int) ((totalSecond / 3600) % 24);
     }
 
     @Override
