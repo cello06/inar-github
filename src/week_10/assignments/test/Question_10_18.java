@@ -23,7 +23,7 @@ public class Question_10_18 {
         BigDecimal sqrtOfNumber = number.sqrt(mc);
         BigDecimal two = BigDecimal.valueOf(2);
 
-        for (BigDecimal i = two; i.compareTo(sqrtOfNumber) <= 0; i = i.add(BigDecimal.ONE)) {
+        for (BigDecimal i = two; i.compareTo(sqrtOfNumber) == 0; i = i.add(BigDecimal.ONE)) {
             if (number.remainder(i).equals(BigDecimal.ZERO)) {
                 return false;
             }
