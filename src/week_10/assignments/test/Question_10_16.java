@@ -11,9 +11,9 @@ public class Question_10_16 {
         int count = 0;
 
 
-        while (count < 10){
+        while (count < 10) {
 
-            if(isDivisibleBy2(smallest50DigitNumber) || isDivisibleBy3(smallest50DigitNumber)){
+            if (isDivisibleBy2(smallest50DigitNumber) || isDivisibleBy3(smallest50DigitNumber)) {
                 System.out.println(smallest50DigitNumber);
                 count++;
             }
@@ -21,11 +21,13 @@ public class Question_10_16 {
             integer = new BigInteger(smallest50DigitNumber);
         }
     }
-    public static boolean isDivisibleBy2(String strOfInteger){
+
+    public static boolean isDivisibleBy2(String strOfInteger) {
         BigInteger integer = new BigInteger(strOfInteger);
         return integer.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO);
     }
-    public static boolean isDivisibleBy3(String strOfInteger){
+
+    public static boolean isDivisibleBy3(String strOfInteger) {
         BigInteger integer = new BigInteger(strOfInteger);
         return integer.mod(BigInteger.valueOf(3)).equals(BigInteger.ZERO);
 
