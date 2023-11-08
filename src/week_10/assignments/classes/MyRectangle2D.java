@@ -83,7 +83,8 @@ public class MyRectangle2D {
         }
         return count == 4;
     }
-    public boolean overlaps(MyRectangle2D r){
+
+    public boolean overlaps(MyRectangle2D r) {
         double rightSideOfRectangular = this.x + width / 2;
         double leftSideOfRectangular = this.x - width / 2;
         double upSideOfRectangular = this.y + height / 2;
@@ -94,10 +95,10 @@ public class MyRectangle2D {
         double upSideOfR = r.getY() + r.getHeight() / 2;
         double downSideOfR = r.getY() - r.getHeight() / 2;
 
-        if(upSideOfRectangular < downSideOfR
+        if (upSideOfRectangular < downSideOfR
                 || downSideOfRectangular > upSideOfR
                 || rightSideOfRectangular < leftSideOfR
-                || leftSideOfRectangular > rightSideOfR){
+                || leftSideOfRectangular > rightSideOfR) {
             return false;
         }
         return true;
@@ -114,5 +115,73 @@ public class MyRectangle2D {
         corners[3][0] = r.getX() + r.getWidth() / 2;
         corners[3][1] = r.getX() - r.getHeight() / 2;
         return corners;
+    }
+
+    public static MyRectangle2D getRectangle(double[][] points) {
+        double minX = getMinX(points);
+        double maxX = getMaxX(points);
+        double minY = getMinY(points);
+        double maxY = getMaxY(points);
+        double centerX;
+        double centerY;
+        double width ;
+        double height;
+
+        if (minX < 0 && maxX > 0) {
+            width = Math.abs(minX) + Math.abs(maxX);
+            centerX = minX + width / 2;
+
+        } else {
+            width = Math.abs(maxX) - Math.abs(minX);
+            centerX = minX + width / 2;
+        }
+        if (minY < 0 && maxY > 0) {
+            height = Math.abs(minY) + Math.abs(maxY);
+            centerY = minY + height / 2;
+        } else {
+            height = Math.abs(maxY) - Math.abs(minY);
+            centerY = minY + height / 2;
+        }
+        return new MyRectangle2D(centerX, centerY, width, height);
+    }
+
+    public static double getMinX(double[][] points) {
+        double min = points[0][0];
+        for (int i = 1; i < points.length; i++) {
+            if (points[i][0] < min) {
+                min = points[i][0];
+            }
+        }
+        return min;
+    }
+
+    public static double getMaxX(double[][] points) {
+        double max = points[0][0];
+        for (int i = 1; i < points.length; i++) {
+            if (points[i][0] > max) {
+                max = points[i][0];
+            }
+        }
+        return max;
+    }
+
+    public static double getMinY(double[][] points) {
+        double min = points[0][1];
+        for (int i = 1; i < points.length; i++) {
+            if (points[i][1] < min) {
+                min = points[i][1];
+            }
+        }
+        return min;
+    }
+
+    public static double getMaxY(double[][] points) {
+        double max = points[0][1];
+        for (int i = 1; i < points.length; i++) {
+            if (points[i][1] > max) {
+                max = points[i][1];
+            }
+        }
+        return max;
     }
 }
