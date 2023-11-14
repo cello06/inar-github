@@ -12,7 +12,7 @@ public class MyDate {
         calendar.setTimeInMillis(System.currentTimeMillis());
         this.year = calendar.get(GregorianCalendar.YEAR);
         this.month = calendar.get(GregorianCalendar.MONTH);
-        this.day = calendar.get(GregorianCalendar.DAY_OF_WEEK);
+        this.day = calendar.get(GregorianCalendar.DAY_OF_MONTH);
     }
 
     public MyDate(long elapsedTime) {
@@ -20,7 +20,7 @@ public class MyDate {
         calendar.setTimeInMillis(elapsedTime);
         this.year = calendar.get(GregorianCalendar.YEAR);
         this.month = calendar.get(GregorianCalendar.MONTH);
-        this.day = calendar.get(GregorianCalendar.DAY_OF_WEEK);
+        this.day = calendar.get(GregorianCalendar.DAY_OF_MONTH);
     }
 
     public MyDate(int year, int month, int day) {
@@ -47,7 +47,7 @@ public class MyDate {
         calendar.setTimeInMillis(elapsedTime);
         this.year = calendar.get(GregorianCalendar.YEAR);
         this.month = calendar.get(GregorianCalendar.MONTH);
-        this.day = calendar.get(GregorianCalendar.DAY_OF_WEEK);
+        this.day = calendar.get(GregorianCalendar.DAY_OF_MONTH);
     }
 
     @Override
