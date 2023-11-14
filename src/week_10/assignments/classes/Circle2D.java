@@ -58,5 +58,9 @@ public class Circle2D {
         double distance = Math.sqrt(Math.pow(x2 - x, 2) + Math.pow(y2 - y, 2));
         return distance < radius2 + radius;
     }
+    @Override
+    public String toString(){
+        return "Radius : " + getRadius();
+    }
 
 }

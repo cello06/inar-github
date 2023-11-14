@@ -10,6 +10,9 @@ public class Loan {
 
     public Loan() {
         loanDate = new Date();
+        this.annualInterestRate = 2.5;
+        this.numberOfYears = 1;
+        this.loanAmount = 1000;
     }
 
     public Loan(
@@ -64,5 +67,11 @@ public class Loan {
         return totalPayment;
     }
 
-
+    @Override
+    public String toString() {
+        return "Annual Interest Rate : " + this.annualInterestRate +
+                "\nNumber of Years : " + this.numberOfYears +
+                "\nLoan Amount : " + this.loanAmount +
+                "\nLoan Date : " + this.loanDate;
+    }
 }
