@@ -1,6 +1,6 @@
 package week_11.assignments.classes;
 
-public class Triangle extends GeometricObject{
+public class Triangle extends GeometricObject {
     private double side1;
     private double side2;
     private double side3;
