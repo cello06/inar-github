@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 public class WriteTale {
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println(System.getProperty("user.dir"));
-        File tale = new File("C:\\Users\\Celallettin\\workspace\\inar-java\\src\\week_12\\ATaleOfTwoCities");
+        File tale = new File("C:\\Users\\Celallettin\\workspace\\inar-java\\src\\week_12\\live_class\\ATaleOfTwoCities");
         System.out.println(tale.getAbsolutePath());
         PrintWriter output = new PrintWriter(tale);
             output.println("It was the best of times, it was the worst of times, it was the age of wisdom,");
