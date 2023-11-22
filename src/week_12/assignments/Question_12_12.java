@@ -12,13 +12,13 @@ public class Question_12_12 {
 
 
         String fileName = args[0];
-        ArrayList<String> linesOfClass = convertClass(fileName);
+        String linesOfClass = convertClass(fileName);
         writeNewClass(linesOfClass, fileName);
 
     }
 
-    public static ArrayList<String> convertClass(String fileName) {
-        ArrayList<String> linesOfClass = new ArrayList<>();
+    public static String convertClass(String fileName) {
+        String s = "";
         File file = new File(fileName);
         if (!file.exists()) {
             System.out.println("There is no this kind of file to read!");
@@ -26,30 +26,20 @@ public class Question_12_12 {
         }
         try {
             Scanner input = new Scanner(file);
+
             while (input.hasNext()) {
-                String currentLine = input.nextLine();
-                String checkLine = currentLine.trim();
-
-                if (checkLine.startsWith("public class")) {
-                    linesOfClass.add(currentLine.trim() + " {");
-                } else if (checkLine.equals("}")) {
-                    linesOfClass.add(currentLine);
-                } else if (checkLine.startsWith("public static void main")) {
-                    linesOfClass.add(currentLine + " {");
-
-                } else if (!checkLine.equals("{")) {
-                    linesOfClass.add(currentLine);
-                }
+               s += input.nextLine() + "\n";
             }
+            s = s.replaceAll("\\s*\\{"," {");
             input.close();
         } catch (FileNotFoundException ex) {
             System.out.println("File not found!");
         }
-        return linesOfClass;
+        return s;
     }
 
     public static void writeNewClass
-            (ArrayList<String> linesOfClass, String fileName) {
+            (String linesOfClass, String fileName) {
         File file = new File(fileName);
         if (!file.exists()) {
             System.out.println("There is no this kind of file to write!");
@@ -57,9 +47,9 @@ public class Question_12_12 {
         }
         try {
             PrintWriter output = new PrintWriter(fileName);
-            for (int i = 0; i < linesOfClass.size(); i++) {
-                output.println(linesOfClass.get(i));
-            }
+
+            output.println(linesOfClass);
+
             output.close();
         } catch (IOException ex) {
             System.out.println("I/O problem occurred!");
