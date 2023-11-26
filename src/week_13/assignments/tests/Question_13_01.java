@@ -18,12 +18,16 @@ public class Question_13_01 {
                 double side1 = input.nextDouble();
                 double side2 = input.nextDouble();
                 double side3 = input.nextDouble();
+
                 GeometricObject triangle = new Triangle(side1, side2, side3);
                 input.nextLine();
+
                 System.out.println("Enter the color :");
                 String color = input.nextLine();
+
                 System.out.println("Enter : isFilled ? true of false :");
                 String isFilledStr = input.nextLine();
+
                 boolean isFilled;
                 if (isFilledStr.toLowerCase(Locale.ROOT).equals("false")) {
                     isFilled = false;
@@ -32,9 +36,12 @@ public class Question_13_01 {
                 } else {
                     throw new InputMismatchException("Wrong input !");
                 }
+
                 triangle.setColor(color);
                 triangle.setFilled(isFilled);
+
                 System.out.println(triangle.toString());
+
                 condition = false;
             } catch (InputMismatchException ex) {
                 System.out.println("Wrong input , try again! \n Enter a character to continue!");
