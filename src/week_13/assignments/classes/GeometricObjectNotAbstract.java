@@ -2,7 +2,7 @@ package week_13.assignments.classes;
 
 import java.util.Date;
 
-public class GeometricObjectNotAbstract implements Comparable<GeometricObject>{
+public class GeometricObjectNotAbstract {
     private String color;
     private boolean isFilled;
     private Date whenCreated;
@@ -48,10 +48,7 @@ public class GeometricObjectNotAbstract implements Comparable<GeometricObject>{
         return "Created on " + this.whenCreated + "\ncolor : " + this.color +
                 " and filled : " + this.isFilled;
     }
-    @Override
-    public int compareTo(GeometricObject object){
-       return 0;
-    }
+
     public static GeometricObjectNotAbstract max
             (GeometricObjectNotAbstract obj1,GeometricObjectNotAbstract obj2){
         if(obj1.getArea() > obj2.getArea()){
