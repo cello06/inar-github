@@ -43,4 +43,5 @@ public class Triangle extends GeometricObject{
     public double getPerimeter() {
         return this.side1 + this.side2 + this.side3;
     }
+
 }

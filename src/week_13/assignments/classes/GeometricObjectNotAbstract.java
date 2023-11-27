@@ -2,16 +2,16 @@ package week_13.assignments.classes;
 
 import java.util.Date;
 
-public abstract class GeometricObject implements Comparable<GeometricObject> {
+public class GeometricObjectNotAbstract implements Comparable<GeometricObject>{
     private String color;
     private boolean isFilled;
     private Date whenCreated;
 
-    protected GeometricObject() {
+    protected GeometricObjectNotAbstract() {
         this.whenCreated = new Date();
     }
 
-    protected GeometricObject(String color, boolean isFilled) {
+    protected GeometricObjectNotAbstract(String color, boolean isFilled) {
         this.color = color;
         this.isFilled = isFilled;
         this.whenCreated = new Date();
@@ -36,6 +36,12 @@ public abstract class GeometricObject implements Comparable<GeometricObject> {
     public Date getWhenCreated() {
         return this.whenCreated;
     }
+    public double getArea(){
+        return 0;
+    }
+    public double getPerimeter(){
+        return 0;
+    }
 
     @Override
     public String toString() {
@@ -44,18 +50,16 @@ public abstract class GeometricObject implements Comparable<GeometricObject> {
     }
     @Override
     public int compareTo(GeometricObject object){
-        if(this.getArea() > object.getArea()){
-            return 1;
-        } else if (this.getArea() == object.getArea()) {
-            return 0;
-        }else{
-            return -1;
+       return 0;
+    }
+    public static GeometricObjectNotAbstract max
+            (GeometricObjectNotAbstract obj1,GeometricObjectNotAbstract obj2){
+        if(obj1.getArea() > obj2.getArea()){
+            return obj1;
+        } else if (obj1.getArea() < obj2.getArea()) {
+            return obj2;
+        }else {
+            return obj1;
         }
     }
-
-
-    public abstract double getArea();
-
-    public abstract double getPerimeter();
-
 }
