@@ -1,6 +1,6 @@
 package week_13.assignments.classes;
 
-public class Circle extends GeometricObjectNotAbstract{
+public class Circle extends GeometricObjectNotAbstract {
     private double radius;
 
     public Circle(){

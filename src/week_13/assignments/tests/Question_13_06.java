@@ -1,7 +1,6 @@
 package week_13.assignments.tests;
 
 import week_13.assignments.classes.ComparableCircle;
-import week_13.assignments.classes.GeometricObjectNotAbstract;
 
 public class Question_13_06 {
     public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class Question_13_06 {
         System.out.println("Comparable Circle 2 : \n" + comparableCircle2);
         System.out.println("\n\n---------------------------------------------\n");
 
-        if (comparableCircle1.compareTo(comparableCircle2) == 1) {
+        if (comparableCircle1.compareTo(comparableCircle2) > 0) {
             System.out.println("ComparableCircle1 is the larger of two Circles");
         } else if (comparableCircle1.compareTo(comparableCircle2) == 0) {
             System.out.println("Both circle are equals");
