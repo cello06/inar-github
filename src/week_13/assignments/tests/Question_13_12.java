@@ -1,6 +1,5 @@
 package week_13.assignments.tests;
 
-import week_12.assignments.classes.IllegalTriangleException;
 import week_13.assignments.classes.*;
 
 public class Question_13_12 {
