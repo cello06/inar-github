@@ -18,17 +18,6 @@ public class Circle_09 extends GeometricObject{
     }
 
     @Override
-    public int compareTo(GeometricObject object){
-        if(this.getRadius() > ((Circle_09) object).getRadius()){
-            return 1;
-        } else if (this.getRadius() < ((Circle_09) object).getRadius()) {
-            return -1;
-        }else {
-            return 0;
-        }
-    }
-
-    @Override
     public boolean equals(Object o){
         return this.getRadius() == ((Circle_09) o).getRadius();
     }
