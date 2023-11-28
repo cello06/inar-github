@@ -1,10 +1,12 @@
 package week_13.live_class;
 
+import java.math.BigInteger;
+
 public class TestRationalClass {
     public static void main(String[] args) {
-        Rational r1 = new Rational(4,2);
-        Rational r2 = new Rational(2,3);
+        FixedRational r1 = new FixedRational(new BigInteger("1"),new BigInteger("3"));
 
+        FixedRational r2 = new FixedRational(new BigInteger("1"),new BigInteger("3"));
         System.out.println(r1 + " + " + r2 + " = " + r1.add(r2));
         System.out.println(r1 + " - " + r2 + " = " + r1.subtract(r2));
         System.out.println(r1 + " * " + r2 + " = " + r1.multiply(r2));
