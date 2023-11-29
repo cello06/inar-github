@@ -39,8 +39,8 @@ public class FixedRational extends Number implements Comparable<FixedRational> {
     @Override
     public double doubleValue() {
 
-        BigDecimal numer = new BigDecimal(this.numerator.doubleValue());
-        BigDecimal deNumer = new BigDecimal(this.denominator.doubleValue());
+        BigDecimal numer = new BigDecimal(this.numerator);
+        BigDecimal deNumer = new BigDecimal(this.denominator);
         BigDecimal oldResult = numer.divide(deNumer, 2, RoundingMode.DOWN);
         return oldResult.doubleValue();
 
@@ -53,6 +53,14 @@ public class FixedRational extends Number implements Comparable<FixedRational> {
 
     public BigInteger getDenominator() {
         return this.denominator;
+    }
+
+    public void setNumerator(BigInteger numerator) {
+        this.numerator = numerator;
+    }
+
+    public void setDenominator(BigInteger denominator) {
+        this.denominator = denominator;
     }
 
     public FixedRational add(FixedRational secondRational) {
