@@ -64,7 +64,7 @@ public class Complex implements Cloneable {
 
     @Override
     public String toString() {
-        return "(" + realPart + ((imaginaryPart != 0) ? " + " + imaginaryPart + "i": "") + ")";
+        return "(" + realPart + ((imaginaryPart != 0) ? " + " + String.format("%.4f",imaginaryPart) + "i": "") + ")";
     }
 
     @Override
