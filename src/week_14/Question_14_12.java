@@ -10,7 +10,7 @@ public class Question_14_12 {
         Map<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < sentence.length(); i++) {
-            if(sentence.charAt(i) == ' '){
+            if (sentence.charAt(i) == ' ') {
                 continue;
             }
             if (!map.containsKey(sentence.charAt(i))) {
@@ -21,12 +21,12 @@ public class Question_14_12 {
         }
 
         for (int i = 0; i < sentence.length(); i++) {
-            if(sentence.charAt(i) == ' '){
+            if (sentence.charAt(i) == ' ') {
                 continue;
             }
             if (map.get(sentence.charAt(i)) == 1) {
                 System.out.println("The first non-repeating character is '" + sentence.charAt(i) + "' : " +
-                        (i+1) + ". character of the string.");
+                        (i + 1) + ". character of the string.");
                 break;
             }
         }
