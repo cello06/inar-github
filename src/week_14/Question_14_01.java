@@ -14,7 +14,7 @@ public class Question_14_01 {
         reverseList(numbers);
         System.out.print("Reversed list :");
         System.out.println(numbers);
-        //print(numbers);
+        //print(numbers);//
     }
 
     public static void generateList(ArrayList<Integer> list) {
