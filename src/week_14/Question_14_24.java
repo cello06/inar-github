@@ -42,10 +42,16 @@ public class Question_14_24 {
     }
 
     public static boolean getResult(int absoluteDifferance, ArrayList<Integer> numbers) {
+
+        //This method can be written better in this way ;
+        //Firstly you check for duplicate numbers , if there
+        //is duplicated numbers then you can check for theirs
+        //absolute difference!
+
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < numbers.size() - 1; i++) {
             for (int j = i + 1; j < numbers.size(); j++) {
-                if (Math.abs(numbers.get(i) - numbers.get(j)) == absoluteDifferance) {
+                if (Math.abs(numbers.get(i) - numbers.get(j)) <= absoluteDifferance) {
                     if (!map.containsKey(numbers.get(i))) {
                         map.put(numbers.get(i), 1);
                     } else {
