@@ -6,7 +6,7 @@ import week_16.java.AgeRestrictionValidator;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestAgeRestrictionValidator {
+public class AgeRestrictionValidatorTest {
     AgeRestrictionValidator ageRestrictionValidator = new AgeRestrictionValidator();
 
     @Test

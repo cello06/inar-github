@@ -3,12 +3,10 @@ package week_16.test;
 import org.junit.jupiter.api.*;
 import week_16.java.ShippingCostCalculator;
 
-import java.security.InvalidParameterException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TestShippingCostCalculator {
+public class ShippingCostCalculatorTest {
     ShippingCostCalculator shippingCostCalculator;
     static int testCaseNumber = 1;
 

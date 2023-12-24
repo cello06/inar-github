@@ -2,13 +2,12 @@ package week_16.test;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import week_16.java.OrderStatusManager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestOrderStatusManager {
+public class OrderStatusManagerTest {
     static int testCaseNumber = 1;
 
     @BeforeAll

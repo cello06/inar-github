@@ -6,7 +6,7 @@ import week_16.java.LoginValidator;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestLoginValidate {
+public class LoginValidateTest {
     @Test
     void testValidEmailAddress() {
         LoginValidator loginValidator = new LoginValidator();
